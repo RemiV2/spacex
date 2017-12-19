@@ -61,16 +61,16 @@ gulp.task("scripts", () => {
       plumber({
         errorHandler: (error) => {
           console.log(error.message)
-          this.emit("end")
+          //this.emit("end")
         }
       })
     )
     .pipe(concat("main.js"))
     .pipe(babel())
+    //.pipe(uglify())
     .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest("dist/js/"))
-    .pipe(uglify())
-    .pipe(gulp.dest("dist/js/"))
+    //.pipe(gulp.dest("dist/js/"))
     .pipe(browserSync.reload({ stream: true }))
 })
 
