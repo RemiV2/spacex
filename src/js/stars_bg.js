@@ -29,7 +29,7 @@ const createStar = () => {
   star.random = Math.random()
   // Get angle between star and canvas center
   star.angle = Math.atan2(star.y - centerPoint.y, star.x - centerPoint.x)
-  star.color = '#fff'
+  star.color = "#FFFDE7"
   star.radius = star.random * star.distance / 200
   star.speed = Math.random()
 
