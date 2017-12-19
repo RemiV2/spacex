@@ -26,11 +26,11 @@ const createStar = () => {
   star.x = canvas.width * Math.random()
   star.y = canvas.height * Math.random()
   star.distance = getDistance(star.x, star.y, centerPoint.x, centerPoint.y)
-  star.angle = Math.atan2(star.y - centerPoint.y, star.x - centerPoint.x) * 180 / Math.PI
+  star.random = Math.random()
+  // Get angle between star and canvas center
+  star.angle = Math.atan2(star.y - centerPoint.y, star.x - centerPoint.x)
   star.color = '#fff'
-  //star.radius = Math.random() * 2
-  //star.radius = 2 * star.distance / window.innerWidth
-  star.radius = star.distance / 300
+  star.radius = star.random * star.distance / 200
   star.speed = Math.random()
 
   stars.push(star)
@@ -45,9 +45,9 @@ const moveStars = () => {
       // Delete elements out of canvas
       stars.splice(i, 1)
     }
-    //star.radius = 2 * star.distance / window.innerWidth
+    // Increase stars size when they get closer
     star.distance = getDistance(star.x, star.y, centerPoint.x, centerPoint.y)
-    star.radius = star.distance/300
+    star.radius = star.random * star.distance / 200
     i++
   }
 }
