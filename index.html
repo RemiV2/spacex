@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="dist/css/reset.min.css">
   <link rel="stylesheet" href="dist/css/style.min.css">
   <title>SpaceX Experience</title>
 </head>
 <body>
-  <section class="slide header">
-    <canvas class="stars-bg" width="800" height="800"></canvas>
-    <img src="dist/images/eclipse.png" class="eclipse" alt="Eclipse">
-    <img src="dist/images/spacex-logo.svg" class="logo" alt="Logo SpaceX">
+  <section class="slide header scene">
+    <canvas class="stars-bg layer" width="800" height="800" data-depth="0"></canvas>
+    <img src="dist/images/eclipse.png" class="eclipse layer" data-depth="0.1" alt="Eclipse">
+    <img src="dist/images/spacex-logo.svg" class="logo layer" data-depth="0.25" alt="Logo SpaceX">
+    <div class="button layer" data-depth="0.3">Start mission</div>
   </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
   <script src="dist/js/main.min.js"></script>
 </body>
 </html>
