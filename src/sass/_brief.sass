@@ -18,15 +18,17 @@ section.brief
 
 
   .info
-    display: flex
+    padding-right: 20px
+    display: flex !important
     flex-direction: column
     justify-content: space-around
     position: absolute
     width: 30%
-    display: flex
+    display: flex !important
     background: #000
-    top: 0
-    right: 0
+    top: 0 !important
+    right: 0 !important
+    left: auto !important
     height: 100%
     &:before
       content: ''
@@ -37,7 +39,6 @@ section.brief
       width: 50%
 
     p
-      margin: 10px
       height: 100px
       color: #fff
       font-size: 16px

@@ -8,9 +8,10 @@ for (const scene of scenes) {
   const parallaxInstance = new Parallax(scene)
 }
 
-let currentSlideIndex = -1
+let currentSlideIndex = 0
 
 const nextSlide = () => {
+  console.log('next')
   if (currentSlideIndex >= 0) {
     slides[currentSlideIndex].classList.add('fadeout')
   }
@@ -22,10 +23,12 @@ const nextSlide = () => {
 
 const previousSlide = () => {
   if (currentSlideIndex > 0) {
-    currentSlideIndex--
-    slides[currentSlideIndex].classList.add('fadein')
-    currentSlideIndex++
+    console.log('back')
+    slides[currentSlideIndex].classList.remove('fadein')
     slides[currentSlideIndex].classList.add('fadeout')
+    currentSlideIndex--
+    slides[currentSlideIndex].classList.remove('fadeout')
+    slides[currentSlideIndex].classList.add('fadein')
   }
 }
 
@@ -49,6 +52,4 @@ document.addEventListener('keydown', (event) => {
 for (const button of buttons) {
   button.addEventListener('click', nextSlide)
 }
-
-nextSlide()
 
