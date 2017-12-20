@@ -25,9 +25,19 @@ section.slide
   position: absolute
   top: 50%
   left: 50%
-  transform: translate(-50%, -50%) !important
+  transform: translate(-50%, -50%) scale(0) !important
+  opacity: 0
+  will-change: transform
+  transition: all 1s ease-in-out
   overflow: hidden
   z-index: 0
+  &.fadeout
+    transform: translate(-50%, -50%) scale(3, 3) !important
+    opacity: 0
+  &.fadein
+    transform: translate(-50%, -50%) scale(1, 1) !important
+    opacity: 1
+
 
 .button
   width: 200px
@@ -41,3 +51,27 @@ section.slide
   color: white
   background: #000000
   cursor: pointer
+
+.index-indicator
+  position: absolute
+  z-index: 300
+  top: 20px
+  right: 20px
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif
+  color: #fff
+  text-align: right
+
+  .index
+    position: absolute
+    top: -30px
+    right: 0
+    font-size: 94px
+    opacity: 0.4
+
+  .name
+    position: absolute
+    right: 10px
+    top: 23px
+    text-transform: uppercase
+    width: 300px
+    font-size: 35px
