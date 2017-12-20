@@ -16,7 +16,7 @@ const resize = () => {
   // Reset canvas content
   clear()
   stars = []
-  for (let i=0; i<70; i++) {
+  for (let i=0; i<300; i++) {
     createStar()
   }
 }
@@ -30,8 +30,8 @@ const createStar = () => {
   // Get angle between star and canvas center
   star.angle = Math.atan2(star.y - centerPoint.y, star.x - centerPoint.x)
   star.color = "#FFFDE7"
-  star.radius = star.random * star.distance / 200
-  star.speed = Math.random()
+  star.radius = star.random * star.distance / 500
+  star.speed = Math.random() * 0.7
 
   stars.push(star)
 }
@@ -47,7 +47,7 @@ const moveStars = () => {
     }
     // Increase stars size when they get closer
     star.distance = getDistance(star.x, star.y, centerPoint.x, centerPoint.y)
-    star.radius = star.random * star.distance / 200
+    star.radius = star.random * star.distance / 500
     i++
   }
 }
