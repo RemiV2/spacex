@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RemiV2/spacex#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "browser-sync": "2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "4.0.0",
