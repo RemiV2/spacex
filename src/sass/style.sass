@@ -75,3 +75,27 @@ section.slide
     text-transform: uppercase
     width: 300px
     font-size: 35px
+
+.slide-overview
+  display: flex !important
+  flex-direction: row
+  position: absolute
+  left: auto !important
+  top: auto !important
+  bottom: 20px !important
+  right: 30px !important
+  justify-content: space-between
+  width: 30%
+  color: #fff
+
+  div
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    opacity: 0.5
+    cursor: pointer
+    &.focused
+      opacity: 1
+
+    img
+      margin: 0 5px
