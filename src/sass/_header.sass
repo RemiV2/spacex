@@ -1,23 +1,29 @@
 section.header
-  position: relative
+  //position: relative
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-content: center
+  
 
   canvas
-    background: #1f1f1f
+    background: #000
     z-index: 0
 
   img.eclipse
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-61%, -60%)
+    top: calc(50% - 450px) !important
+    left: calc(50% - 500px) !important
+    margin: 0 auto
     filter: brightness(90%)
 
   img.logo
-    position: absolute
     width: 300px
     height: auto
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
+    top: calc(50% - 69px) !important
+    left: calc(50% - 140px) !important
     filter: brightness(0) invert(1)
+
+  .button
+    top: calc(85% - 20px) !important
+    left: calc(50% - 100px) !important
   
