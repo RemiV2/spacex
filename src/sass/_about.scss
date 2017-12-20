@@ -20,14 +20,14 @@ body
 
 .container_total
 {
-  position relative;
+  position: relative;
   width: 100%;
 }
 
 .container_total .img img
 {
-    position: absolute;
-    margin-left: -100px;
+  position: absolute;
+  margin-left: -100px;
   width: 960px;
   height: 699px;
   
@@ -108,9 +108,9 @@ body
   padding-top: 40px;
 }
 
-.container_total .paragraph .equipe
+.container_total .paragraph .team
 {
-    font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: #ffffff;
   text-align: center;
   padding-top: 30px;
@@ -119,15 +119,11 @@ body
 
 }
 
-.container_total .paragraph .equipe img
+.container_total .paragraph .team img
 {
   margin-top: -20px;
+  filter: brightness(0) invert(1);
   width: 80px;
   height: 80px;
   cursor: pointer;
 }
-
-
-
-
-
