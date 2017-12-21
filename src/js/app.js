@@ -10,6 +10,7 @@ const outside = document.querySelector('section.outside .background')
 const outsideDarkFilter = document.querySelector('section.outside .dark-filter')
 const outsideInfo = document.querySelector('section.outside .info')
 const outsideRocket = document.querySelector('section.outside .rocket')
+const insideDarkFilter = document.querySelector('section.inside .dark-filter')
 const parallaxInstances = []
 
 for (let i=0; i<scenes.length; i++) {
@@ -22,21 +23,25 @@ for (let i=0; i<scenes.length; i++) {
 let currentSlideIndex = 0
 
 const nextSlide = () => {
-  if (currentSlideIndex >= 0) {
-    slides[currentSlideIndex].classList.remove('fadein')
-    slides[currentSlideIndex].classList.add('fadeout')
-    parallaxInstances[currentSlideIndex].disable()
-  }
-  if (currentSlideIndex < slides.length-1) {
-    currentSlideIndex++
-  }
-  slides[currentSlideIndex].classList.add('fadein')
-  parallaxInstances[currentSlideIndex].enable()
-  // Open suit protection
-  if (currentSlideIndex == 2) {
-    getSuit()
-  } else if (currentSlideIndex == 3) {
-    showRocket()
+  if (currentSlideIndex == 4) {
+    showInfos()
+  } else {
+    if (currentSlideIndex >= 0) {
+      slides[currentSlideIndex].classList.remove("fadein")
+      slides[currentSlideIndex].classList.add("fadeout")
+      parallaxInstances[currentSlideIndex].disable()
+    }
+    if (currentSlideIndex < slides.length - 1) {
+      currentSlideIndex++
+    }
+    slides[currentSlideIndex].classList.add("fadein")
+    parallaxInstances[currentSlideIndex].enable()
+    // Open suit protection
+    if (currentSlideIndex == 2) {
+      getSuit()
+    } else if (currentSlideIndex == 3) {
+      showRocket()
+    }
   }
 }
 
@@ -99,6 +104,10 @@ const hideRocket = () => {
   outsideInfo.classList.remove("visible")
   outsideRocket.classList.remove("reveal")
   outsideRocket.classList.remove("splice")
+}
+
+const showInfos = () => {
+  insideDarkFilter.classList.add('visible')
 }
 
 document.addEventListener('keydown', (event) => {
