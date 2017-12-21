@@ -1,3 +1,63 @@
 section.equipment
-  background: url("../images/lab.jpg")
-  background-size: cover
+  position: relative
+  text-align: center
+  background: #000000
+
+  .graphics
+    width: 100%
+    height: 100%
+    background: url("../images/lab.jpg")
+    background-size: cover
+    transition: 1s transform ease-in-out
+    &.travel
+      transform: translateX(-30%)
+
+    .suit
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      transition: 2s all ease-in-out
+      transform-origin: center center
+      background: url("../images/suit.png")
+      background-size: cover
+      opacity: 0.4
+      &.expand
+        z-index: 500
+        opacity: 1
+        transform: scale(1.3, 1.3) translateY(15%)
+
+    .dark-filter
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, 0.7)
+        will-change: opacity
+        transition: 1s opacity ease-in-out
+        opacity: 0
+        &.visible
+          opacity: 1
+
+
+    .glass
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      will-change: transform
+      transition: transform 3s ease-in-out
+      background: url("../images/glass.png")
+      background-size: cover
+      &.reveal
+        transform: translateY(-53%)
+
+  .info
+    opacity: 0
+    transition: opacity 1s ease-in-out
+    width: 50%
+    &.reveal
+      opacity: 1
