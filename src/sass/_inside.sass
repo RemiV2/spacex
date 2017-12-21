@@ -1,6 +1,12 @@
 section.inside
   position: relative
 
+  .info
+    transition: 1s opacity ease-in-out
+    opacity: 0
+    &.visible
+      opacity: 1
+
   .rocket-interior
     position: absolute
     top: 0

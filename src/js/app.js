@@ -11,6 +11,7 @@ const outsideDarkFilter = document.querySelector('section.outside .dark-filter')
 const outsideInfo = document.querySelector('section.outside .info')
 const outsideRocket = document.querySelector('section.outside .rocket')
 const insideDarkFilter = document.querySelector('section.inside .dark-filter')
+const insideInfo = document.querySelector('section.inside .info')
 const parallaxInstances = []
 
 for (let i=0; i<scenes.length; i++) {
@@ -108,6 +109,7 @@ const hideRocket = () => {
 
 const showInfos = () => {
   insideDarkFilter.classList.add('visible')
+  insideInfo.classList.add('visible')
 }
 
 document.addEventListener('keydown', (event) => {
