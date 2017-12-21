@@ -14,6 +14,8 @@ section.equipment
     transition: 1s transform ease-in-out
     &.travel
       transform: translateX(-30%)
+      @media screen and (max-width: 1100px)
+        transform: translateX(-40%)
 
     .suit
       position: absolute
@@ -62,5 +64,7 @@ section.equipment
     opacity: 0
     transition: opacity 1s ease-in-out
     width: 50%
+    @media screen and (max-width: 1100px)
+      width: 40%
     &.reveal
       opacity: 1
