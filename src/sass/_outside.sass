@@ -7,11 +7,17 @@ section.outside
     top: 0
     left: 0
     will-change: transform
-    transform-origin: 68% center
+    transform-origin: 62% center
     background: url("../images/outside.jpg")
     background-size: cover
     &.move
-      animation: shaky-zoom 7s linear forwards
+      animation: 7s linear 2s forwards shaky-zoom
+
+  .info
+    opacity: 0
+    transition: 1s transform ease-in-out
+    &.visible
+      opacity: 1
 
 @keyframes shaky-zoom
   0%
@@ -19,15 +25,15 @@ section.outside
   14%
     transform: rotate(2deg) scale(1.2, 1.2) translate(10px, 10px)
   28%
-    transform: rotate(-2deg) scale(1.35, 1.35) translate(-10px, -10px)
+    transform: rotate(-2deg) scale(1.3, 1.3) translate(-10px, -10px)
   42%
-    transform: rotate(2deg) scale(1.5, 1.5) translate(10px, 10px)
+    transform: rotate(2deg) scale(1.4, 1.4) translate(10px, 10px)
   56%
-    transform: rotate(-2deg) scale(1.65, 1.65) translate(-10px, -10px)
+    transform: rotate(-2deg) scale(1.5, 1.5) translate(-10px, -10px)
   70%
-    transform: rotate(2deg) scale(1.8, 1.8) translate(20px, 10px)
+    transform: rotate(2deg) scale(1.6, 1.6) translate(20px, 10px)
   85%
-    transform: rotate(-2deg) scale(2, 2) translate(-10px, -10px)
+    transform: rotate(-2deg) scale(1.7, 1.7) translate(-10px, -10px)
   100%
-    transform: rotate(0) scale(2.15, 2.15) translate(0, 0)
+    transform: rotate(0) scale(1.8, 1.8) translate(0, 0)
     

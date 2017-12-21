@@ -6,8 +6,11 @@ const buttons = Array.from(document.querySelectorAll('.button'))
 const equipmentGraphics = document.querySelector('.equipment .graphics')
 const glass = equipmentGraphics.querySelector('.glass')
 const suit = equipmentGraphics.querySelector('.suit')
-const darkFilter = equipmentGraphics.querySelector('.dark-filter')
+const equipmentDarkFilter = equipmentGraphics.querySelector('.dark-filter')
 const equipmentInfo = document.querySelector('.equipment .info')
+const outside = document.querySelector('section.outside .background')
+const outsideDarkFilter = document.querySelector('section.outside .dark-filter')
+const outsideInfo = document.querySelector('section.outside .info')
 const parallaxInstances = []
 
 console.log(slides)
@@ -25,7 +28,6 @@ for (let i=0; i<scenes.length; i++) {
 let currentSlideIndex = 0
 
 const nextSlide = () => {
-  console.log(slides)
   console.log('next')
   if (currentSlideIndex >= 0) {
     slides[currentSlideIndex].classList.remove('fadein')
@@ -41,12 +43,16 @@ const nextSlide = () => {
   // Open suit protection
   if (currentSlideIndex == 2) {
     getSuit()
+  } else if (currentSlideIndex == 3) {
+    showRocket()
   }
 }
 
 const previousSlide = () => {
   if (currentSlideIndex == 2) {
     removeSuit()
+  } else if (currentSlideIndex == 3) {
+    outside.classList.remove("move")
   }
   if (currentSlideIndex > 0) {
     console.log('back')
@@ -70,7 +76,7 @@ const getSuit = () => {
   window.setTimeout(() => {
     equipmentGraphics.classList.add('travel')
     equipmentInfo.classList.add('reveal')
-    darkFilter.classList.add('visible')
+    equipmentDarkFilter.classList.add('visible')
   }, 5000)
 }
 
@@ -79,7 +85,17 @@ const removeSuit = () => {
   suit.classList.remove("expand")
   equipmentGraphics.classList.remove('travel')
   equipmentInfo.classList.remove('reveal')
-  darkFilter.classList.remove("visible")
+  equipmentDarkFilter.classList.remove("visible")
+}
+
+const showRocket = () => {
+  outside.classList.add('move')
+  window.setTimeout(() => {
+    outsideDarkFilter.classList.add('visible')
+  }, 9000)
+  window.setTimeout(() => {
+    outsideInfo.classList.add('visible')
+  }, 10000)
 }
 
 document.addEventListener('keydown', (event) => {
