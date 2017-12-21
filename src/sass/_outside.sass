@@ -13,6 +13,41 @@ section.outside
     &.move
       animation: 7s linear 2s forwards shaky-zoom
 
+  .rocket
+    margin: 30px 10px 30px 100px
+    opacity: 0
+    transition: opacity 1s ease-in-out
+    width: 350px
+    height: 670px
+    position: absolute
+    left: 0
+    &.reveal
+      opacity: 1
+    &.splice
+      .bottom
+        transform: translate(-50%, -40%)
+      .top
+        transform: translate(-50%, -55%)
+    div
+      position: absolute
+      margin: 30px 10px
+      height: 100%
+      width: 100%
+      top: 50%
+      left: 50%
+      will-change: transform
+      transition: 1s transform ease-in-out
+      transform: translate(-50%, -50%)
+      &.bottom
+        background: url('../images/dragon3.png')
+        background-size: cover
+      &.middle
+        background: url('../images/dragon2.png')
+        background-size: cover
+      &.top
+        background: url('../images/dragon1.png')
+        background-size: cover
+
   .info
     opacity: 0
     width: 40%

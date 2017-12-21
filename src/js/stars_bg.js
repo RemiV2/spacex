@@ -80,6 +80,7 @@ const loop = () => {
 }
 
 const getDistance = (x0, y0, x1, y1) => {
+  // Using Pythagore
   const differenceX = x0 - x1
   const differenceY = y0 - y1
   return Math.sqrt(Math.pow(differenceX, 2) + Math.pow(differenceY, 2))

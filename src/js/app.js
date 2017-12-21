@@ -11,6 +11,7 @@ const equipmentInfo = document.querySelector('.equipment .info')
 const outside = document.querySelector('section.outside .background')
 const outsideDarkFilter = document.querySelector('section.outside .dark-filter')
 const outsideInfo = document.querySelector('section.outside .info')
+const outsideRocket = document.querySelector('section.outside .rocket')
 const parallaxInstances = []
 
 console.log(slides)
@@ -52,7 +53,7 @@ const previousSlide = () => {
   if (currentSlideIndex == 2) {
     removeSuit()
   } else if (currentSlideIndex == 3) {
-    outside.classList.remove("move")
+    hideRocket()
   }
   if (currentSlideIndex > 0) {
     console.log('back')
@@ -95,7 +96,19 @@ const showRocket = () => {
   }, 9000)
   window.setTimeout(() => {
     outsideInfo.classList.add('visible')
+    outsideRocket.classList.add('reveal')
   }, 10000)
+  window.setTimeout(() => {
+    outsideRocket.classList.add("splice")
+  }, 11000)
+}
+
+const hideRocket = () => {
+  outside.classList.remove("move")
+  outsideDarkFilter.classList.remove("visible")
+  outsideInfo.classList.remove("visible")
+  outsideRocket.classList.remove("reveal")
+  outsideRocket.classList.remove("splice")
 }
 
 document.addEventListener('keydown', (event) => {
