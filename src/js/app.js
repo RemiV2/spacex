@@ -1,5 +1,3 @@
-console.log('js is ready')
-
 const scenes = Array.from(document.querySelectorAll(".scene"))
 const slides = Array.from(document.querySelectorAll('section.slide'))
 const buttons = Array.from(document.querySelectorAll('.button'))
@@ -14,12 +12,7 @@ const outsideInfo = document.querySelector('section.outside .info')
 const outsideRocket = document.querySelector('section.outside .rocket')
 const parallaxInstances = []
 
-console.log(slides)
-
-//console.log(glass)
-
 for (let i=0; i<scenes.length; i++) {
-  //parallaxInstance = new Parallax(scenes[i])
   parallaxInstances[i] = new Parallax(scenes[i])
   if (i>0) {
     parallaxInstances[i].disable()
@@ -29,7 +22,6 @@ for (let i=0; i<scenes.length; i++) {
 let currentSlideIndex = 0
 
 const nextSlide = () => {
-  console.log('next')
   if (currentSlideIndex >= 0) {
     slides[currentSlideIndex].classList.remove('fadein')
     slides[currentSlideIndex].classList.add('fadeout')
@@ -39,7 +31,6 @@ const nextSlide = () => {
     currentSlideIndex++
   }
   slides[currentSlideIndex].classList.add('fadein')
-  //console.log(parallaxInstances)
   parallaxInstances[currentSlideIndex].enable()
   // Open suit protection
   if (currentSlideIndex == 2) {
@@ -56,7 +47,6 @@ const previousSlide = () => {
     hideRocket()
   }
   if (currentSlideIndex > 0) {
-    console.log('back')
     slides[currentSlideIndex].classList.remove('fadein')
     slides[currentSlideIndex].classList.add('fadeout')
     parallaxInstances[currentSlideIndex].disable()
