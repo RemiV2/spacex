@@ -12,6 +12,8 @@
 * SASS for stylesheets
 * ES6 for the scripts
 * Gulp to compile files
+* Github Pages for hosting
+* Parallax.js
 
 ## The team
 

@@ -10,6 +10,28 @@ html.home, body.home
   overflow: hidden
   font-family: 'quicksand', 'roboto', Arial, Helvetica, sans-serif
 
+.mobile
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  display: none
+  z-index: 900
+  padding: 30px
+  h2
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 90%
+    margin: 0 auto
+    line-height: 40px
+    transform: translate(-50%, -50%)
+    font-size: 25px
+    color: #fff
+    text-align: center
+  @media screen and (max-width: 800px)
+    display: block
 
 .trail
   pointer-events: none
@@ -22,6 +44,8 @@ html.home, body.home
   background: rgb(246, 247, 247)
   filter: blur(2px)
   opacity: 0.5
+  @media screen and (max-width: 800px)
+    display: none
 
 
 canvas
@@ -55,6 +79,8 @@ section.slide
   &.fadein
     transform: translate(-50%, -50%) scale(1, 1) !important
     opacity: 1
+  @media screen and (max-width: 800px)
+    display: none
 
 
 .button
