@@ -13,6 +13,7 @@ const outsideRocket = document.querySelector('section.outside .rocket')
 const insideDarkFilter = document.querySelector('section.inside .dark-filter')
 const insideInfo = document.querySelector('section.inside .info')
 const buttonInfo = document.querySelector('section.inside .infos-button')
+const stagesAnimation = document.querySelector('section.inside video')
 const parallaxInstances = []
 
 for (let i=0; i<scenes.length; i++) {
@@ -109,11 +110,18 @@ const hideRocket = () => {
 const showInfos = () => {
   insideDarkFilter.classList.add('visible')
   insideInfo.classList.add('visible')
+  stagesAnimation.classList.add('visible')
+  window.setTimeout(() => {
+    stagesAnimation.play()
+  }, 1000)
 }
 
 const hideInfos = () => {
   insideDarkFilter.classList.remove('visible')
   insideInfo.classList.remove('visible')
+  stagesAnimation.classList.remove("visible")
+  stagesAnimation.pause()
+  stagesAnimation.currentTime = 0
 }
 
 document.addEventListener('keydown', (event) => {

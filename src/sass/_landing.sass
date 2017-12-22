@@ -1,8 +1,14 @@
 section.landing
   position: relative
 
+  .info
+    opacity: 0
+    &.visible
+		  opacity: 1
+
   > img, .moon
     position: absolute
+
     &.earth
       left: 30% !important
       width: 200px

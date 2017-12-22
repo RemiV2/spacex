@@ -19,6 +19,19 @@ section.inside
     left: 50%
     transform: translate(-50%, 50%)
 
+  .stages-animation
+    left: 30px
+    width: 55%
+    top: 50%
+    opacity: 0
+    transition: 1s opacity ease-in-out
+    transform: translateY(-50%)
+    border: 1px solid white
+    position: absolute
+    pointer-events: none
+    &.visible
+      opacity: 1
+
   .info
     transition: 1s opacity ease-in-out
     opacity: 0

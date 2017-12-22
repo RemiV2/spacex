@@ -6,7 +6,6 @@ let frameCount = 0
 
 
 const resize = () => {
-  console.log('resize')
   // Resize canvas
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
