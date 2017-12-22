@@ -70,7 +70,6 @@ const previousSlide = () => {
 
 const nextMusic = () => {
   currentMusic++
-  console.log(currentMusic)
   musics[currentMusic].play()
   if (currentMusic > 0) {
     musics[currentMusic - 1].pause()
@@ -83,7 +82,6 @@ const previousMusic = () => {
     musics[currentMusic].pause()
     musics[currentMusic].currentTime = 0
     currentMusic--
-    console.log(currentMusic)
     musics[currentMusic].play()
   }
 }
