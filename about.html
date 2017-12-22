@@ -5,33 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="dist/images/rocket.png" /> 
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Quicksand" rel="stylesheet">
   <link rel"stylesheet" href="dist/css/reset.min.css"/>
   <link rel="stylesheet" href="dist/css/style.min.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Quicksand" rel="stylesheet">
   <title>About</title>
 </head>
-<body>
-  <div class="container_total">
-    <div class="img">
+<body class="about">
+  <canvas class="stars-bg" width="800" height="800"></canvas>
+  <section class="slide about fadein">
+    <div class="index-indicator">
+      <p class="index">00</p>
+      <h2 class="name">About SpaceX</h2>
+    </div>
+    <div class="elon">
       <img src="src/images/elonm.png"/>
     </div>
-    <div class="paragraph">
-      <div class="title"><h1>ABOUT</h1></div>
-        <p>Our site is an immersive site for the user to imagine the project of SpaceX.</p>
-        <p>SpaceX is a manufacturer specializing in aerospace, designing Falcon launchers, Merlin and Raptor engines, and the Dragon cargo ship that supplies the International Space Station (ISS). Based in Hawthorne (California, USA), SpaceX was founded in 2002 by <b><u>Elon Musk</u></b> who is also the leader.</p>
-        <p>The US company SpaceX announces that two tourists will make a private flight around the Moon by the end of 2018. Travelers will go where the Man has not ventured for 50 years, ie since the Apollo mission 17 of NASA, in December 1972.</p>
-        <div class="button"><a href="http://spacex.com/">SITE WEB</a></div>
-      <div class="social_network">
-        <a href="https://www.facebook.com/SpaceX"><img src="src/images/facebook.png"/></a>
-        <a href="https://twitter.com/spacex"><img src="src/images/twitter.png"/></a>
-        <a href="https://www.instagram.com/spacex/?hl=fr"><img src="src/images/instagram.png"/></a>
+    <div class="info">
+      <p>Our site is an immersive site for the user to imagine the project of SpaceX.<br/>SpaceX is a manufacturer specializing in aerospace, designing Falcon launchers, Merlin and Raptor engines, and the Dragon cargo ship that supplies the International Space Station (ISS). Based in Hawthorne (California, USA), SpaceX was founded in 2002 by <b><u>Elon Musk</u></b> who is also the leader.<br/>The US company SpaceX announces that two tourists will make a private flight around the Moon by the end of 2018. Travelers will go where the Man has not ventured for 50 years, ie since the Apollo mission 17 of NASA, in December 1972.</p>
+      <div class="social-network">
+        <a href="https://www.facebook.com/SpaceX" title="SpaceX on Facebook"><img src="src/images/facebook.png" alt="Facebook"/></a>
+        <a href="https://twitter.com/spacex" title="SpaceX on Twitter"><img src="src/images/twitter.png" alt="Twitter"/></a>
+        <a href="https://www.instagram.com/spacex/?hl=fr" title="SpaceX on Instagram"><img src="src/images/instagram.png" alt="Instagram"/></a>
       </div>  
       <div class="team">
-        <p>RÉMI DE JUVIGNY - YOËL HANOUFA - MARION BEYOU OLIVIA MONKAM - NICOLAS DELATTRE</p>
-        <img src="src/images/hetic.png"/>
+        <ul>
+          <li>Rémi de Juvigny</li>
+          <li>Yoel Hanoufa</li>
+          <li>Marion Beyou</li>
+          <li>Olivia Monkam</li>
+          <li>Nicolas Delattre</li>
+        </ul>
       </div>
-    </div>
-  </div>
+      <div class="button"><a href="http://spacex.com/">SpaceX website</a></div>
+    </info>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
+  <script src="dist/js/stars_bg.js"></script>
 </body>
 </html>
