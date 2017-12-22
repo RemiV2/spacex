@@ -14,7 +14,10 @@ const insideDarkFilter = document.querySelector('section.inside .dark-filter')
 const insideInfo = document.querySelector('section.inside .info')
 const buttonInfo = document.querySelector('section.inside .infos-button')
 const stagesAnimation = document.querySelector('section.inside video')
+const musics = document.querySelectorAll('.music audio')
+
 const parallaxInstances = []
+let currentMusic = -1 // index
 
 for (let i=0; i<scenes.length; i++) {
   parallaxInstances[i] = new Parallax(scenes[i])
@@ -26,6 +29,7 @@ for (let i=0; i<scenes.length; i++) {
 let currentSlideIndex = 0
 
 const nextSlide = () => {
+  nextMusic()
   if (currentSlideIndex >= 0) {
     slides[currentSlideIndex].classList.remove("fadein")
     slides[currentSlideIndex].classList.add("fadeout")
@@ -45,6 +49,7 @@ const nextSlide = () => {
 }
 
 const previousSlide = () => {
+  previousMusic()
   if (currentSlideIndex == 4) {
     hideInfos()
   } else if (currentSlideIndex == 2) {
@@ -60,6 +65,26 @@ const previousSlide = () => {
     slides[currentSlideIndex].classList.remove('fadeout')
     slides[currentSlideIndex].classList.add('fadein')
     parallaxInstances[currentSlideIndex].enable()
+  }
+}
+
+const nextMusic = () => {
+  currentMusic++
+  console.log(currentMusic)
+  musics[currentMusic].play()
+  if (currentMusic > 0) {
+    musics[currentMusic - 1].pause()
+    musics[currentMusic - 1].currentTime = 0
+  }
+}
+
+const previousMusic = () => {
+  if (currentMusic > 0) {
+    musics[currentMusic].pause()
+    musics[currentMusic].currentTime = 0
+    currentMusic--
+    console.log(currentMusic)
+    musics[currentMusic].play()
   }
 }
 
@@ -146,3 +171,6 @@ for (const button of buttons) {
 }
 
 buttonInfo.addEventListener('click', showInfos)
+
+// Start playing music on load
+nextMusic()
