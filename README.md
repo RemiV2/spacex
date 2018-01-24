@@ -1,5 +1,7 @@
 # A journey to the Moon - SpaceX Experience
 
+[Experience this SpaceX journey yourself](https://remiv2.github.io/spacex/)
+
 ## Environment setup
 
 1. `git clone https://github.com/RemiV2/spacex.git`
